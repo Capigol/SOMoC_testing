@@ -43,7 +43,7 @@ st.image(image)
 
 st.write("&nbsp[![Website](https://img.shields.io/badge/website-LIDeB-blue)](https://lideb.biol.unlp.edu.ar)&nbsp[![Twitter Follow](https://img.shields.io/twitter/follow/LIDeB_UNLP?style=social)](https://twitter.com/intent/follow?screen_name=LIDeB_UNLP)")
 st.subheader(":pushpin:" "About Us")
-st.markdown("We are a drug discovery team with an interest in the development of publicly available open-source customizable cheminformatics tools to be used in computer-assisted drug discovery. We belong to the Laboratory of Bioactive Research and Development (LIDeB) of the National University of La Plata (UNLP), Argentina. Our research group is focused on computer-guided drug repurposing and rational discovery of new drug candidates to treat epilepsy and neglected tropical diseases.")
+st.markdown("We are a drug discovery team with an interest in the development of publicly available open-source customizable cheminformatics tools to be used in computer-assisted drug discovery. We belong to the Laboratory of Bioactive Compounds Research and Development (LIDeB) of the National University of La Plata (UNLP), Argentina. Our research group is focused on computer-guided drug repurposing and rational discovery of new drug candidates to treat epilepsy and neglected tropical diseases.")
 
 # Introduction
 #---------------------------------#
@@ -206,8 +206,6 @@ def Fingerprints_calculator(data):
         EState = np.stack(_EState, axis=0)
     except:
         st.error("**Oh no! There was a problem with Fingerprint calculation of some smiles.**  :confused:")
-        st.markdown(" :point_down: **Try using our standarization tool before clustering **")
-        st.write("[LIDeB Standarization tool](https://share.streamlit.io/capigol/lbb-game/main/juego_lbb.py)")
         st.stop()
 
     st.write("Calculating EState molecular fingerprints...")
