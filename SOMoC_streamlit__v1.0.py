@@ -141,7 +141,7 @@ def Get_input_data():
             data1.columns = range(data1.shape[1])
             data= data1.copy()
         else:
-            data = pd.read_csv(input_file, delimiter=',', header='infer')
+            data = pd.read_csv(input_file, delimiter=',', header=None)
             st.write(data)
       
     else:
