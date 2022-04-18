@@ -136,7 +136,7 @@ def Get_input_data():
     if input_file is not None:
         name = input_file.name
         #data1 = pd.read_csv(input_file, delimiter=',', header=0)
-        data = pd.read_csv(uploaded_file_1)
+        data = pd.read_csv(input_file)
         if "SMILES" in data:
             list_of_smiles = data["SMILES"]
         else:
