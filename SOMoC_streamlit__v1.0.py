@@ -137,6 +137,7 @@ def Get_input_data():
         name = input_file.name
         data1 = pd.read_csv(input_file, delimiter=',', header=True)
         st.write(data1)
+        st.write(list(data1.columns))
         if "SMILES" in list(data1.columns):
             data = data1["SMILES"]
         else:
