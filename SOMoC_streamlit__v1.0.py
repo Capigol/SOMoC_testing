@@ -135,7 +135,7 @@ def Get_input_data():
 
     if input_file is not None:
         name = input_file.name
-        data1 = pd.read_csv(input_file, delimiter=',', header=True)
+        data1 = pd.read_csv(input_file, delimiter=',', header=0)
         st.write(data1)
         st.write(list(data1.columns))
         if "SMILES" in list(data1.columns):
