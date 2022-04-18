@@ -139,7 +139,8 @@ def Get_input_data():
         st.write(data1)
         st.write(list(data1.columns))
         if "SMILES" in list(data1.columns):
-            data = data1["SMILES"]
+            data.columns = range(df.shape[1])
+            #data = data1["SMILES"]
         else:
             data = pd.read_csv(input_file, delimiter=',', header=None)
             #data = data1.iloc[:, 0]     
