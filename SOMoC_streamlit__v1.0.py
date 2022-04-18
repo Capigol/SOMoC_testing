@@ -136,6 +136,11 @@ def Get_input_data():
     if input_file is not None:
         name = input_file.name
         data = pd.read_csv(input_file, delimiter=',', header=None)
+        if "SMILES" in data:
+            data = data["SMILES"]
+        else:
+            data = data.iloc[:, 0]     
+      
     else:
         name = Get_name("test/focal_adhesion.csv")
         data = pd.read_csv("test/focal_adhesion.csv", delimiter=',', header=None)
