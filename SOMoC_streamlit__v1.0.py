@@ -135,13 +135,13 @@ def Get_input_data():
 
     if input_file is not None:
         name = input_file.name
-        data1 = pd.read_csv(input_file, delimiter=',', header=None)
+        data1 = pd.read_csv(input_file, delimiter=',', header=True)
         st.write(data1)
         if "SMILES" in list(data1.columns):
             data = data1["SMILES"]
-            
         else:
-            data = data1.iloc[:, 0]     
+            data = pd.read_csv(input_file, delimiter=',', header=None)
+            #data = data1.iloc[:, 0]     
       
     else:
         name = Get_name("test/focal_adhesion.csv")
