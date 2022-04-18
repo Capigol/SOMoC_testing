@@ -135,14 +135,20 @@ def Get_input_data():
 
     if input_file is not None:
         name = input_file.name
-        data1 = pd.read_csv(input_file, delimiter=',', header=0)
-        st.write(data1)
-        if "SMILES" in list(data1.columns):
-            data1.columns = range(data1.shape[1])
-            data= data1.copy()
+        #data1 = pd.read_csv(input_file, delimiter=',', header=0)
+        data = pd.read_csv(uploaded_file_1)
+        if "SMILES" in data:
+            list_of_smiles = data["SMILES"]
         else:
-            data = pd.read_csv(input_file, delimiter=',')
-            st.write(data)
+            list_of_smiles = data.iloc[:, 0]
+          
+        #st.write(data1)
+       # if "SMILES" in list(data1.columns):
+        #    data1.columns = range(data1.shape[1])
+        #    data= data1.copy()
+        #else:
+         #   data = pd.read_csv(input_file, delimiter=',')
+          #  st.write(data)
       
     else:
         name = Get_name("test/focal_adhesion.csv")
